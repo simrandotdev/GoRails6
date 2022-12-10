@@ -7,4 +7,7 @@ class User < ApplicationRecord
   # but when we submit a password it will run through bcrypt
   # and hash that password.
   has_secure_password
+
+  # Validating Email and making sure that email is not empty
+  validates :email, presence: true
 end
