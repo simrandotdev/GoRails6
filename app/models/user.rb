@@ -9,5 +9,5 @@ class User < ApplicationRecord
   has_secure_password
 
   # Validating Email and making sure that email is not empty
-  validates :email, presence: true
+  validates :email, presence:true, format: { with: URI::MailTo::EMAIL_REGEXP, message: 'Invalid email address provided' }
 end
