@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get "sign_up", to: "registration#new"
   post "sign_up", to: "registration#create"
   get "logout", to: "registration#logout"
+  get "login", to: "registration#login_page"
+  post "login", to: "registration#login"
   # Root Route
   root to: "main#index"
 end
