@@ -13,7 +13,7 @@
           <%= link_to "About", about_path, class: "nav-link" %>
         </li>
 
-        <% if session[:user_id] %>
+        <% if Current.user %>
           <li class="nav-item">
             <%= link_to "Logout", logout_path, class: "nav-link" %>
           </li>
