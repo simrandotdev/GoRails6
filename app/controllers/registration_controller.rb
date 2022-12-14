@@ -18,22 +18,6 @@ class RegistrationController < ApplicationController
     redirect_to root_path
   end
 
-  def login_page
-    @user = User.new
-  end
-
-  def login
-    user = User.find_by(email: params[:email])
-
-    if user.present? && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to root_path, notice: "Successfully logged In"
-    else
-      flash[:alert] = "Invalid email or password"
-      render :login_page
-    end
-  end
-
   private
 
   def user_params
